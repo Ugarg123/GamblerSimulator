@@ -10,9 +10,9 @@ public class GamblerGame {
 	public static void main(String[] args) {
 		int play = (int) Math.floor(Math.random() * 10) % 2;
 		 System.out.println("Gamblers play:"+play);
-		 for (int i =1; i <=20; i++) {
+		 for (int i =1; i <= 20; i++) {
 			 int cashInHand = Stake;
-			 while(cashInHand > 50 && cashInHand <150) {
+			 while(cashInHand > 50 && cashInHand < 150) {
 				 int start = (int) Math.floor(Math.random() * 10 % 2);
 				 System.out.println("Gamblers play:"+play);
 				 
@@ -41,6 +41,12 @@ public class GamblerGame {
 			 else if(cashInHand < 100){
 				 int amountLostPerDay = Stake - cashInHand;
 				 System.out.println("Player lost day"+i+" RS "+amountLostPerDay);
+			 }
+			 if(cashInHand == 150) {
+				 System.out.println("Day"+i+" is gamblers Luckiest day as he won maximum amount "+cashInHand+" RS");
+			 }
+			 else if (cashInHand == 50) {
+				 System.out.println("Day"+i+" is gamblers Unluckiest day as he lost maximum amount "+cashInHand+" RS");
 			 }
 			 Total_Amount = Total_Amount + cashInHand;
 		 }
